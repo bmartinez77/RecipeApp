@@ -1,0 +1,11 @@
+<div class="list-group" *ngIf="selectedRecipe == null">
+    <button class="list-group-item" active
+      *ngFor="let recipe of recipes"
+                                          
+      (click)="onSelectedRecipe(recipe)">
+      {{ recipe.Name }} {{ recipe.Id }}
+    </button>
+ </div>
+ <div *ngIf="selectedRecipe">
+     <app-display-recipe [recipe]="selectedRecipe" ></app-display-recipe>
+ </div>
